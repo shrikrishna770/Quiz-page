@@ -3,16 +3,16 @@ const questions = [
     question: "Which HTML tag is used to define an unordered list?",
     answers: [
       { text: "ol", correct: false },
-      { text: "ul", correct: true },
       { text: "li", correct: false },
+      { text: "ul", correct: true },
       { text: "dl", correct: false },
     ]
   },
   {
     question: "Which CSS property is used to change the text color of an element?",
     answers: [  
-      { text: "font-color", correct: false },
       { text: "color", correct: true },
+      { text: "font-color", correct: false },
       { text: "text-color", correct: false },
       { text: "background-color", correct: false },
     ]
@@ -21,9 +21,9 @@ const questions = [
     question: "In CSS, Which Property is used to create space between the content and the border of an element?",
     answers: [
       { text: "margin", correct: false },
-      { text: "padding", correct: true },
       { text: "border-spacing", correct: false },
       { text: "spacing", correct: false },
+      { text: "padding", correct: true },
     ]
   },
   {
@@ -39,9 +39,9 @@ const questions = [
     question: "What of the following is the correct way to apply a CSS class to an HTML element?",
     answers: [
       { text: "div id='example'", correct: false },
-      { text: "div class='example'", correct: true },
       { text: "div style='example'", correct: false },
       { text: "div css='example'", correct: false },
+      { text: "div class='example'", correct: true },
     ]
   }
 ];
