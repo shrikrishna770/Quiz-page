@@ -49,15 +49,18 @@ const questions = [
 const questionElement = document.getElementById("question");
 const answerButtons = document.getElementById("answer-buttons");
 const nextButton = document.getElementById("next-btn");
+const header = document.getElementById("playscore");
 
 
 
 let currentQuestionIndex = 0;
 let score = 0;
+let play = 1;
 
 function startQuiz() {
   currentQuestionIndex = 0;
   score = 0;
+  play = 1;
   nextButton.innerHTML = "NEXT";
   showQuestion();
 }
@@ -69,6 +72,7 @@ function showQuestion() {
   questionElement.innerHTML = questionNo + ". " + currentQuestion.question;
 
   currentQuestion.answers.forEach((answer) => {
+    header.innerHTML= `${play} / ${questions.length}`;
     const button = document.createElement("button");
     button.innerHTML = answer.text;
     button.classList.add("btn");
@@ -93,10 +97,12 @@ function selectAnswer(e){
     const selectedbtn = e.target;
     const iscorrect = selectedbtn.dataset.correct==="true";
     if(iscorrect){
-        selectedbtn.classList.add("correct")
+        selectedbtn.classList.add("correct");
         score++;
+        play++;
     }else{
         selectedbtn.classList.add("incorrect");
+        play++;
     }
     Array.from(answerButtons.children).forEach(button =>{
         if(button.dataset.correct === "true"){
@@ -110,20 +116,27 @@ function selectAnswer(e){
 
 function showscore(){
     resetState();
-    questionElement.innerHTML=`You Scored${score} Out of ${questions.length}!`;
+    if(score>2){
+      questionElement.innerHTML=`You Scored ${score} Out of ${questions.length}! you passed this test`;
+    }else{
+      questionElement.innerHTML=`You Scored ${score} Out of ${questions.length}! you fail this test`;
+
+    }
     nextButton.innerHTML = "Play Again";
     nextButton.style.display = "block";
 }
 
 function handleNextButton(){
   currentQuestionIndex++;
-  if(currentQuestionIndex<questions.length){
+  if(currentQuestionIndex == questions.length - 1){
+    showQuestion();
+    nextButton.innerHTML="Submit"
+  }else if(currentQuestionIndex<questions.length){
     showQuestion();
   }else{
     showscore();
   }
 }
-
 
 
 

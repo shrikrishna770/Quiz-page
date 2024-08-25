@@ -13,20 +13,34 @@ body{
     background-color: #fff;
     width: 90%;
     max-width: 600px;
-    margin: 100px auto 20px auto;
+    margin: 70px auto 10px auto;
     border-radius: 10px;  
     padding: 30px;
-    background-color:#bff3c4 ;
+    background-color:#92dc99 ;
+    box-shadow: 10px 10px 10px 2px red;
 }
 
-.main h1{
+#head{
+    display: flex;
+    justify-content: space-between; 
+    border-bottom:1px solid #333 ;
+}
+
+#head #playscore{
+    font-size: 19px;
+    font-weight: 700;
+}
+
+
+
+#head h1{
     font-size: 25px;
     font-weight: 600;
     color: #001e4d;
-    border-bottom:1px solid #333 ;
     padding-bottom: 30px;
 
 }
+
 
 .quiz{
     padding: 20px 0px;
@@ -50,11 +64,14 @@ body{
     border-radius:4px ;
     cursor: pointer;
     transition: all 0.4s;
+    box-shadow: 2px 2px 2px 2px ;
+
 }
 
 .btn:hover:not(:disabled){
-    background: #222;
+    background: #5e94a0;
     color: #fff;
+    box-shadow: 5px 5px 5px 5px green ;
 
 }
 .btn:disabled{
@@ -66,7 +83,7 @@ body{
     background-color: #001e4d;
     color: #fff;
     font-weight: 500;
-    width: 150px;
+    width: 100px;
     border: 0px;
     padding: 10px;
     margin: 20PX auto 0;
