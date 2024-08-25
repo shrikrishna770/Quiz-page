@@ -117,12 +117,12 @@ function selectAnswer(e){
 function showscore(){
     resetState();
     if(score>2){
-      questionElement.innerHTML=`You Scored ${score} Out of ${questions.length}! you passed this test`;
+      questionElement.innerHTML=`You Scored ${score} Out of ${questions.length}! You Passed This Test`;
     }else{
-      questionElement.innerHTML=`You Scored ${score} Out of ${questions.length}! you fail this test`;
+      questionElement.innerHTML=`You Scored ${score} Out of ${questions.length}! You Fail This Test`;
 
     }
-    nextButton.innerHTML = "Play Again";
+    nextButton.innerHTML = "Test Again";
     nextButton.style.display = "block";
 }
 
