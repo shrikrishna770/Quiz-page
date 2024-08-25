@@ -130,7 +130,7 @@ function handleNextButton(){
   currentQuestionIndex++;
   if(currentQuestionIndex == questions.length - 1){
     showQuestion();
-    // nextButton.innerHTML="Submit"
+    nextButton.innerHTML="Submit"
   }else if(currentQuestionIndex<questions.length){
     showQuestion();
   }else{
