@@ -100,9 +100,11 @@ function selectAnswer(e){
         selectedbtn.classList.add("correct");
         score++;
         play++;
+        header.style.display ="inline-block"
     }else{
         selectedbtn.classList.add("incorrect");
         play++;
+        header.style.display ="inline-block"
     }
     Array.from(answerButtons.children).forEach(button =>{
         if(button.dataset.correct === "true"){
@@ -122,6 +124,7 @@ function showscore(){
       questionElement.innerHTML=`You Scored ${score} Out of ${questions.length}! You Fail This Test`;
 
     }
+    header.style.display = "none";
     nextButton.innerHTML = "Test Again";
     nextButton.style.display = "block";
 }
